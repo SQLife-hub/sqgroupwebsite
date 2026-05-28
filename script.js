@@ -4,7 +4,95 @@ const navToggle = document.querySelector(".nav-toggle");
 const nav = document.querySelector(".site-nav");
 const form = document.querySelector("#contact-form");
 const revealItems = document.querySelectorAll(".reveal");
-let activeLanguage = "zh";
+const isLocalFile = window.location.protocol === "file:";
+const cleanPath = window.location.pathname.replace(/\/$/, "") || "/";
+let activeLanguage = cleanPath === "/zh" || cleanPath.startsWith("/zh/") ? "zh" : "en";
+const pageKind = document.body.classList.contains("life-page")
+  ? "legacy"
+  : document.body.classList.contains("general-page")
+    ? "gi"
+    : "home";
+const seoCopy = {
+  home: {
+    en: {
+      title: "SQ Group Malaysia | Estate Planning & General Insurance",
+      description:
+        "SQ Group Malaysia connects you to SQ Life Consultancy for estate planning and SQ General PLT for general insurance support in Kuala Lumpur.",
+    },
+    zh: {
+      title: "SQ Group Malaysia | 资产传承与一般保险",
+      description: "SQ Group Malaysia 提供两个服务入口：SQ Life Consultancy 处理资产传承与遗产事务，SQ General PLT 协助一般保险安排。",
+    },
+  },
+  legacy: {
+    en: {
+      title: "SQ Life Consultancy | Estate Planning Malaysia",
+      description:
+        "SQ Life Consultancy in Kuala Lumpur helps families and businesses with estate planning, will and trust planning, estate administration, and asset unfreezing.",
+    },
+    zh: {
+      title: "SQ Life Consultancy | 资产传承与遗产处理",
+      description: "SQ Life Consultancy 协助个人、家庭及企业梳理资产传承、遗嘱信托规划、遗产处理与资产解冻流程。",
+    },
+  },
+  gi: {
+    en: {
+      title: "SQ General PLT | General Insurance Agency Malaysia",
+      description:
+        "SQ General PLT in Kuala Lumpur helps individuals, families, and businesses arrange motor, home, travel, personal accident, business, and engineering insurance.",
+    },
+    zh: {
+      title: "SQ General PLT | 一般保险安排",
+      description: "SQ General PLT 协助个人、家庭及企业安排汽车、房屋、旅游、个人意外、商业与工程保险。",
+    },
+  },
+};
+
+function routeForLanguage(language) {
+  const path = cleanPath.replace(/\.html$/, "");
+  const isLegacy = path.endsWith("/legacy") || path.endsWith("/life") || path.endsWith("/sq-life");
+  const isGeneralInsurance = path.endsWith("/gi") || path.endsWith("/general") || path.endsWith("/sq-general");
+
+  if (language === "zh") {
+    if (isLegacy) return "/zh/legacy";
+    if (isGeneralInsurance) return "/zh/gi";
+    return "/zh";
+  }
+
+  if (isLegacy) return "/legacy";
+  if (isGeneralInsurance) return "/gi";
+  return "/";
+}
+
+function updateSeoLanguage(language) {
+  const canonical = document.querySelector("link[rel='canonical']");
+  const ogUrl = document.querySelector("meta[property='og:url']");
+  const description = document.querySelector("meta[name='description']");
+  const ogTitle = document.querySelector("meta[property='og:title']");
+  const ogDescription = document.querySelector("meta[property='og:description']");
+  const baseUrl = `https://www.sqgroup.com.my${routeForLanguage(language)}`;
+  const copy = seoCopy[pageKind][language];
+  if (canonical) canonical.setAttribute("href", baseUrl);
+  if (ogUrl) ogUrl.setAttribute("content", baseUrl);
+  document.title = copy.title;
+  if (description) description.setAttribute("content", copy.description);
+  if (ogTitle) ogTitle.setAttribute("content", copy.title);
+  if (ogDescription) ogDescription.setAttribute("content", copy.description);
+}
+
+function updateLocalizedLinks(language) {
+  const routeMap =
+    language === "zh"
+      ? { "/": "/zh", "/legacy": "/zh/legacy", "/gi": "/zh/gi" }
+      : { "/zh": "/", "/zh/legacy": "/legacy", "/zh/gi": "/gi" };
+
+  document.querySelectorAll("a[href]").forEach((link) => {
+    const href = link.getAttribute("href");
+    if (routeMap[href]) {
+      link.setAttribute("href", routeMap[href]);
+    }
+  });
+}
 
 function setLanguage(language) {
   activeLanguage = language;
@@ -12,14 +100,25 @@ function setLanguage(language) {
   translatable.forEach((element) => {
     element.textContent = element.dataset[language];
   });
-  languageToggle.textContent = language === "zh" ? "EN" : "中文";
+  if (languageToggle) {
+    languageToggle.textContent = language === "zh" ? "EN" : "中文";
+  }
+  updateSeoLanguage(language);
+  updateLocalizedLinks(language);
 }
 
 if (languageToggle) {
   languageToggle.addEventListener("click", () => {
-    setLanguage(activeLanguage === "zh" ? "en" : "zh");
+    const nextLanguage = activeLanguage === "zh" ? "en" : "zh";
+    if (isLocalFile) {
+      setLanguage(nextLanguage);
+      return;
+    }
+    window.location.href = routeForLanguage(nextLanguage);
   });
 }
+
+setLanguage(activeLanguage);
 
 if (navToggle && nav) {
   navToggle.addEventListener("click", () => {

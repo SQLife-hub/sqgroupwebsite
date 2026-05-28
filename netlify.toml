@@ -2,19 +2,84 @@
   publish = "."
 
 [[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+
+[[redirects]]
+  from = "/sq-life.html"
+  to = "/legacy"
+  status = 301
+
+[[redirects]]
+  from = "/sq-general.html"
+  to = "/gi"
+  status = 301
+
+[[redirects]]
   from = "/life"
+  to = "/legacy"
+  status = 301
+
+[[redirects]]
+  from = "/general"
+  to = "/gi"
+  status = 301
+
+[[redirects]]
+  from = "/zh/life"
+  to = "/zh/legacy"
+  status = 301
+
+[[redirects]]
+  from = "/zh/general"
+  to = "/zh/gi"
+  status = 301
+
+[[redirects]]
+  from = "/legacy"
   to = "/sq-life.html"
   status = 200
 
 [[redirects]]
-  from = "/general"
+  from = "/gi"
   to = "/sq-general.html"
   status = 200
 
 [[redirects]]
-  from = "/home"
+  from = "/zh"
   to = "/index.html"
   status = 200
+
+[[redirects]]
+  from = "/zh/legacy"
+  to = "/sq-life.html"
+  status = 200
+
+[[redirects]]
+  from = "/zh/gi"
+  to = "/sq-general.html"
+  status = 200
+
+[[redirects]]
+  from = "/zh/styles.css"
+  to = "/styles.css"
+  status = 200
+
+[[redirects]]
+  from = "/zh/script.js"
+  to = "/script.js"
+  status = 200
+
+[[redirects]]
+  from = "/zh/assets/*"
+  to = "/assets/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/home"
+  to = "/"
+  status = 301
 
 [[headers]]
   for = "/*"
