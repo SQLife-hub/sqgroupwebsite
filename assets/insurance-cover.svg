@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 640" role="img" aria-labelledby="title desc">
+  <title id="title">General insurance visual</title>
+  <desc id="desc">A polished corporate illustration of shield-like coverage and protection layers.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#eaf3fa"/>
+      <stop offset="1" stop-color="#fff8eb"/>
+    </linearGradient>
+    <linearGradient id="shield" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#0f5f9f"/>
+      <stop offset="1" stop-color="#103f68"/>
+    </linearGradient>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="24" stdDeviation="22" flood-color="#103f68" flood-opacity=".2"/>
+    </filter>
+  </defs>
+  <rect width="960" height="640" rx="28" fill="url(#bg)"/>
+  <path d="M0 96h960v96H0zM0 448h960v96H0z" fill="#3b424a" opacity=".08"/>
+  <circle cx="220" cy="318" r="142" fill="#f9b352" opacity=".22"/>
+  <circle cx="724" cy="316" r="164" fill="#0f5f9f" opacity=".1"/>
+  <g filter="url(#shadow)">
+    <path d="M480 112l218 80v154c0 136-92 236-218 286-126-50-218-150-218-286V192z" fill="url(#shield)"/>
+    <path d="M480 168l154 56v116c0 98-62 172-154 214-92-42-154-116-154-214V224z" fill="#fff" opacity=".13"/>
+    <path d="M398 342l58 58 120-146" fill="none" stroke="#f9b352" stroke-width="30" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  <g fill="#fff" opacity=".86">
+    <rect x="150" y="170" width="118" height="16" rx="8"/>
+    <rect x="702" y="432" width="136" height="16" rx="8"/>
+    <rect x="742" y="462" width="72" height="16" rx="8"/>
+  </g>
+</svg>

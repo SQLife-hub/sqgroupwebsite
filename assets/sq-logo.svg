@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 537 430" role="img" aria-labelledby="title">
+  <title id="title">SQ logo</title>
+  <rect x="112" y="88" width="202" height="202" fill="#f6b657"/>
+  <g fill="#3f464e">
+    <path d="M80 17h70c-28 4-54 16-76 34h102l16 17H56c-7 9-14 19-19 30h170l7 17H27c-4 9-7 19-9 29h201c1 6 1 12 1 18H14c-1 6-1 12-1 18 0 4 0 7 1 11h204c-1 10-3 19-6 28H22c4 11 9 22 15 31h164c-7 11-15 20-24 28H61c29 25 67 40 109 40 92 0 167-75 167-167S262-16 170-16c-33 0-63 9-90 33z" opacity=".95"/>
+  </g>
+  <text x="162" y="356" font-family="Arial Black, Avenir Next, sans-serif" font-size="242" font-weight="900" fill="#1467a8">S</text>
+  <text x="318" y="362" font-family="Arial Black, Avenir Next, sans-serif" font-size="250" font-weight="900" fill="#1467a8">Q</text>
+  <text x="179" y="367" font-family="Arial Black, Avenir Next, sans-serif" font-size="242" font-weight="900" fill="#f5f5f5" opacity=".9" transform="translate(12 10)">S</text>
+  <text x="335" y="373" font-family="Arial Black, Avenir Next, sans-serif" font-size="250" font-weight="900" fill="#f5f5f5" opacity=".9" transform="translate(12 10)">Q</text>
+  <text x="162" y="356" font-family="Arial Black, Avenir Next, sans-serif" font-size="242" font-weight="900" fill="#1467a8">S</text>
+  <text x="318" y="362" font-family="Arial Black, Avenir Next, sans-serif" font-size="250" font-weight="900" fill="#1467a8">Q</text>
+</svg>
