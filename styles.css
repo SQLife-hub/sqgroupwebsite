@@ -43,9 +43,9 @@ body.nav-open {
   display: grid;
   grid-template-columns: 1fr 1fr auto;
   min-height: 84px;
-  border-bottom: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.94);
-  backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(19, 34, 49, 0.1);
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(14px);
 }
 
 .brand-switch::before {
@@ -63,24 +63,34 @@ body.nav-open {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 14px;
+  gap: 16px;
   min-width: 0;
   padding: 12px clamp(14px, 3vw, 34px);
   color: var(--navy-dark);
   border-right: 1px solid var(--line);
   font-weight: 900;
   line-height: 1.2;
-  transition: background 180ms ease, color 180ms ease;
+  letter-spacing: 0.01em;
+  transition: background 180ms ease, color 180ms ease, border-color 180ms ease;
 }
 
 .brand-tab:hover {
-  background: rgba(15, 95, 159, 0.05);
+  background: rgba(15, 95, 159, 0.035);
 }
 
 .brand-tab img {
-  width: 54px;
-  height: 43px;
+  width: 58px;
+  height: 46px;
   object-fit: contain;
+  padding: 2px;
+  background: transparent;
+  filter: none;
+  mix-blend-mode: normal;
+  transform: translateZ(0);
+}
+
+.brand-tab span {
+  max-width: 21ch;
 }
 
 .brand-tab.active::after {
@@ -108,7 +118,7 @@ body.nav-open {
 .gateway {
   max-width: 1180px;
   margin: 0 auto;
-  padding: clamp(56px, 9vw, 112px) clamp(18px, 5vw, 70px);
+  padding: clamp(64px, 9vw, 116px) clamp(18px, 5vw, 70px);
 }
 
 .gateway-hero {
@@ -124,7 +134,7 @@ body.nav-open {
   max-width: 720px;
   color: var(--charcoal);
   font-size: clamp(17px, 2vw, 22px);
-  line-height: 1.75;
+  line-height: 1.7;
 }
 
 .gateway-grid {
@@ -201,7 +211,7 @@ body.nav-open {
 .gateway-card p {
   max-width: 520px;
   color: rgba(255, 255, 255, 0.84);
-  line-height: 1.75;
+  line-height: 1.72;
 }
 
 .gateway-card strong {
@@ -231,7 +241,7 @@ body.nav-open {
   max-width: 760px;
   color: rgba(255, 255, 255, 0.86);
   font-size: clamp(17px, 2vw, 22px);
-  line-height: 1.75;
+  line-height: 1.68;
 }
 
 .life-hero {
@@ -445,9 +455,9 @@ h1 {
   margin: 0;
   color: var(--ink);
   font-family: "Avenir Next", "Noto Sans SC", "PingFang SC", "Microsoft YaHei", sans-serif;
-  font-size: clamp(38px, 5.8vw, 72px);
+  font-size: clamp(38px, 5.4vw, 68px);
   font-weight: 900;
-  line-height: 1.06;
+  line-height: 1.08;
   letter-spacing: 0;
 }
 
@@ -561,11 +571,12 @@ h1 {
   position: absolute;
   top: 22px;
   right: 22px;
-  width: 102px;
-  height: 82px;
+  width: 112px;
+  height: 90px;
   content: "";
-  background: url("assets/sq-logo.svg") center / contain no-repeat rgba(255, 255, 255, 0.9);
+  background: url("assets/sq-logo.svg") center / 86% auto no-repeat rgba(255, 255, 255, 0.96);
   border-radius: 4px;
+  box-shadow: none;
   z-index: 2;
 }
 
