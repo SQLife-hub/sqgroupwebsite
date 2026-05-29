@@ -8,7 +8,7 @@
     <xhtml:link rel="alternate" hreflang="en-MY" href="https://www.sqgroup.com.my/" />
     <xhtml:link rel="alternate" hreflang="zh-MY" href="https://www.sqgroup.com.my/zh" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sqgroup.com.my/" />
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <priority>1.0</priority>
   </url>
   <url>
@@ -16,7 +16,7 @@
     <xhtml:link rel="alternate" hreflang="en-MY" href="https://www.sqgroup.com.my/legacy" />
     <xhtml:link rel="alternate" hreflang="zh-MY" href="https://www.sqgroup.com.my/zh/legacy" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sqgroup.com.my/legacy" />
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
@@ -24,7 +24,7 @@
     <xhtml:link rel="alternate" hreflang="en-MY" href="https://www.sqgroup.com.my/gi" />
     <xhtml:link rel="alternate" hreflang="zh-MY" href="https://www.sqgroup.com.my/zh/gi" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sqgroup.com.my/gi" />
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
@@ -32,7 +32,7 @@
     <xhtml:link rel="alternate" hreflang="en-MY" href="https://www.sqgroup.com.my/" />
     <xhtml:link rel="alternate" hreflang="zh-MY" href="https://www.sqgroup.com.my/zh" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sqgroup.com.my/" />
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -40,7 +40,7 @@
     <xhtml:link rel="alternate" hreflang="en-MY" href="https://www.sqgroup.com.my/legacy" />
     <xhtml:link rel="alternate" hreflang="zh-MY" href="https://www.sqgroup.com.my/zh/legacy" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sqgroup.com.my/legacy" />
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <priority>0.8</priority>
   </url>
   <url>
@@ -48,7 +48,56 @@
     <xhtml:link rel="alternate" hreflang="en-MY" href="https://www.sqgroup.com.my/gi" />
     <xhtml:link rel="alternate" hreflang="zh-MY" href="https://www.sqgroup.com.my/zh/gi" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.sqgroup.com.my/gi" />
-    <lastmod>2026-05-28</lastmod>
+    <lastmod>2026-05-29</lastmod>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.sqgroup.com.my/legacy/will-trust-planning</loc>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://www.sqgroup.com.my/legacy/will-trust-planning" />
+    <xhtml:link rel="alternate" hreflang="zh-MY" href="https://www.sqgroup.com.my/zh/legacy/will-trust-planning" />
+    <lastmod>2026-05-29</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.sqgroup.com.my/legacy/business-protection-trust</loc>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://www.sqgroup.com.my/legacy/business-protection-trust" />
+    <xhtml:link rel="alternate" hreflang="zh-MY" href="https://www.sqgroup.com.my/zh/legacy/business-protection-trust" />
+    <lastmod>2026-05-29</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.sqgroup.com.my/legacy/estate-management</loc>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://www.sqgroup.com.my/legacy/estate-management" />
+    <xhtml:link rel="alternate" hreflang="zh-MY" href="https://www.sqgroup.com.my/zh/legacy/estate-management" />
+    <lastmod>2026-05-29</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.sqgroup.com.my/legacy/foreign-estate</loc>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://www.sqgroup.com.my/legacy/foreign-estate" />
+    <xhtml:link rel="alternate" hreflang="zh-MY" href="https://www.sqgroup.com.my/zh/legacy/foreign-estate" />
+    <lastmod>2026-05-29</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.sqgroup.com.my/gi/motor-personal-travel</loc>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://www.sqgroup.com.my/gi/motor-personal-travel" />
+    <xhtml:link rel="alternate" hreflang="zh-MY" href="https://www.sqgroup.com.my/zh/gi/motor-personal-travel" />
+    <lastmod>2026-05-29</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.sqgroup.com.my/gi/property-fire</loc>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://www.sqgroup.com.my/gi/property-fire" />
+    <xhtml:link rel="alternate" hreflang="zh-MY" href="https://www.sqgroup.com.my/zh/gi/property-fire" />
+    <lastmod>2026-05-29</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.sqgroup.com.my/gi/business-liability-engineering</loc>
+    <xhtml:link rel="alternate" hreflang="en-MY" href="https://www.sqgroup.com.my/gi/business-liability-engineering" />
+    <xhtml:link rel="alternate" hreflang="zh-MY" href="https://www.sqgroup.com.my/zh/gi/business-liability-engineering" />
+    <lastmod>2026-05-29</lastmod>
+    <priority>0.7</priority>
   </url>
 </urlset>

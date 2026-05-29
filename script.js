@@ -8,11 +8,11 @@ const progressBar = document.createElement("div");
 const isLocalFile = window.location.protocol === "file:";
 const cleanPath = window.location.pathname.replace(/\/$/, "") || "/";
 let activeLanguage = cleanPath === "/zh" || cleanPath.startsWith("/zh/") ? "zh" : "en";
-const pageKind = document.body.classList.contains("life-page")
+const pageKind = document.body.dataset.pageKind || (document.body.classList.contains("life-page")
   ? "legacy"
   : document.body.classList.contains("general-page")
     ? "gi"
-    : "home";
+    : "home");
 const seoCopy = {
   home: {
     en: {
@@ -50,19 +50,20 @@ const seoCopy = {
 };
 
 function routeForLanguage(language) {
-  const path = cleanPath.replace(/\.html$/, "");
-  const isLegacy = path.endsWith("/legacy") || path.endsWith("/life") || path.endsWith("/sq-life");
-  const isGeneralInsurance = path.endsWith("/gi") || path.endsWith("/general") || path.endsWith("/sq-general");
+  let path = cleanPath.replace(/\.html$/, "");
+  if (path.endsWith("/sq-life")) path = "/legacy";
+  if (path.endsWith("/sq-general")) path = "/gi";
+  if (path === "/life") path = "/legacy";
+  if (path === "/general") path = "/gi";
 
   if (language === "zh") {
-    if (isLegacy) return "/zh/legacy";
-    if (isGeneralInsurance) return "/zh/gi";
-    return "/zh";
+    if (path === "/") return "/zh";
+    return path.startsWith("/zh") ? path : `/zh${path}`;
   }
 
-  if (isLegacy) return "/legacy";
-  if (isGeneralInsurance) return "/gi";
-  return "/";
+  if (path === "/zh") return "/";
+  if (path.startsWith("/zh/")) return path.slice(3);
+  return path;
 }
 
 function updateSeoLanguage(language) {
@@ -72,7 +73,14 @@ function updateSeoLanguage(language) {
   const ogTitle = document.querySelector("meta[property='og:title']");
   const ogDescription = document.querySelector("meta[property='og:description']");
   const baseUrl = `https://www.sqgroup.com.my${routeForLanguage(language)}`;
-  const copy = seoCopy[pageKind][language];
+  const copy = {
+    title: document.body.dataset[`seoTitle${language === "zh" ? "Zh" : "En"}`] || seoCopy[pageKind]?.[language]?.title || document.title,
+    description:
+      document.body.dataset[`seoDescription${language === "zh" ? "Zh" : "En"}`] ||
+      seoCopy[pageKind]?.[language]?.description ||
+      description?.getAttribute("content") ||
+      "",
+  };
   if (canonical) canonical.setAttribute("href", baseUrl);
   if (ogUrl) ogUrl.setAttribute("content", baseUrl);
   document.title = copy.title;
@@ -82,15 +90,23 @@ function updateSeoLanguage(language) {
 }
 
 function updateLocalizedLinks(language) {
-  const routeMap =
-    language === "zh"
-      ? { "/": "/zh", "/legacy": "/zh/legacy", "/gi": "/zh/gi" }
-      : { "/zh": "/", "/zh/legacy": "/legacy", "/zh/gi": "/gi" };
-
   document.querySelectorAll("a[href]").forEach((link) => {
     const href = link.getAttribute("href");
-    if (routeMap[href]) {
-      link.setAttribute("href", routeMap[href]);
+    if (!href || href.startsWith("#") || href.startsWith("http") || href.startsWith("mailto:") || href.startsWith("tel:")) {
+      return;
+    }
+    if (language === "zh") {
+      if (href === "/") {
+        link.setAttribute("href", "/zh");
+      } else if (href.startsWith("/") && !href.startsWith("/zh")) {
+        link.setAttribute("href", `/zh${href}`);
+      }
+      return;
+    }
+    if (href === "/zh") {
+      link.setAttribute("href", "/");
+    } else if (href.startsWith("/zh/")) {
+      link.setAttribute("href", href.slice(3));
     }
   });
 }

@@ -42,8 +42,43 @@
   status = 200
 
 [[redirects]]
+  from = "/legacy/will-trust-planning"
+  to = "/legacy-will-trust-planning.html"
+  status = 200
+
+[[redirects]]
+  from = "/legacy/business-protection-trust"
+  to = "/legacy-business-protection-trust.html"
+  status = 200
+
+[[redirects]]
+  from = "/legacy/estate-management"
+  to = "/legacy-estate-management.html"
+  status = 200
+
+[[redirects]]
+  from = "/legacy/foreign-estate"
+  to = "/legacy-foreign-estate.html"
+  status = 200
+
+[[redirects]]
   from = "/gi"
   to = "/sq-general.html"
+  status = 200
+
+[[redirects]]
+  from = "/gi/motor-personal-travel"
+  to = "/gi-motor-personal-travel.html"
+  status = 200
+
+[[redirects]]
+  from = "/gi/property-fire"
+  to = "/gi-property-fire.html"
+  status = 200
+
+[[redirects]]
+  from = "/gi/business-liability-engineering"
+  to = "/gi-business-liability-engineering.html"
   status = 200
 
 [[redirects]]
@@ -57,8 +92,73 @@
   status = 200
 
 [[redirects]]
+  from = "/zh/legacy/will-trust-planning"
+  to = "/legacy-will-trust-planning.html"
+  status = 200
+
+[[redirects]]
+  from = "/zh/legacy/business-protection-trust"
+  to = "/legacy-business-protection-trust.html"
+  status = 200
+
+[[redirects]]
+  from = "/zh/legacy/estate-management"
+  to = "/legacy-estate-management.html"
+  status = 200
+
+[[redirects]]
+  from = "/zh/legacy/foreign-estate"
+  to = "/legacy-foreign-estate.html"
+  status = 200
+
+[[redirects]]
   from = "/zh/gi"
   to = "/sq-general.html"
+  status = 200
+
+[[redirects]]
+  from = "/zh/gi/motor-personal-travel"
+  to = "/gi-motor-personal-travel.html"
+  status = 200
+
+[[redirects]]
+  from = "/zh/gi/property-fire"
+  to = "/gi-property-fire.html"
+  status = 200
+
+[[redirects]]
+  from = "/zh/gi/business-liability-engineering"
+  to = "/gi-business-liability-engineering.html"
+  status = 200
+
+[[redirects]]
+  from = "/legacy/styles.css"
+  to = "/styles.css"
+  status = 200
+
+[[redirects]]
+  from = "/legacy/script.js"
+  to = "/script.js"
+  status = 200
+
+[[redirects]]
+  from = "/legacy/assets/*"
+  to = "/assets/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/gi/styles.css"
+  to = "/styles.css"
+  status = 200
+
+[[redirects]]
+  from = "/gi/script.js"
+  to = "/script.js"
+  status = 200
+
+[[redirects]]
+  from = "/gi/assets/*"
+  to = "/assets/:splat"
   status = 200
 
 [[redirects]]
@@ -73,6 +173,36 @@
 
 [[redirects]]
   from = "/zh/assets/*"
+  to = "/assets/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/zh/legacy/styles.css"
+  to = "/styles.css"
+  status = 200
+
+[[redirects]]
+  from = "/zh/legacy/script.js"
+  to = "/script.js"
+  status = 200
+
+[[redirects]]
+  from = "/zh/legacy/assets/*"
+  to = "/assets/:splat"
+  status = 200
+
+[[redirects]]
+  from = "/zh/gi/styles.css"
+  to = "/styles.css"
+  status = 200
+
+[[redirects]]
+  from = "/zh/gi/script.js"
+  to = "/script.js"
+  status = 200
+
+[[redirects]]
+  from = "/zh/gi/assets/*"
   to = "/assets/:splat"
   status = 200
 
