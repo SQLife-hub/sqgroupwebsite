@@ -4,6 +4,7 @@ const navToggle = document.querySelector(".nav-toggle");
 const nav = document.querySelector(".site-nav");
 const form = document.querySelector("#contact-form");
 const revealItems = document.querySelectorAll(".reveal");
+const progressBar = document.createElement("div");
 const isLocalFile = window.location.protocol === "file:";
 const cleanPath = window.location.pathname.replace(/\/$/, "") || "/";
 let activeLanguage = cleanPath === "/zh" || cleanPath.startsWith("/zh/") ? "zh" : "en";
@@ -119,6 +120,19 @@ if (languageToggle) {
 }
 
 setLanguage(activeLanguage);
+
+progressBar.className = "scroll-progress";
+progressBar.setAttribute("aria-hidden", "true");
+document.body.prepend(progressBar);
+
+function updateScrollProgress() {
+  const scrollable = document.documentElement.scrollHeight - window.innerHeight;
+  const progress = scrollable > 0 ? window.scrollY / scrollable : 0;
+  progressBar.style.transform = `scaleX(${Math.min(Math.max(progress, 0), 1)})`;
+}
+
+window.addEventListener("scroll", updateScrollProgress, { passive: true });
+updateScrollProgress();
 
 if (navToggle && nav) {
   navToggle.addEventListener("click", () => {
