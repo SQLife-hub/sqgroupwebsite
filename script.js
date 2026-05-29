@@ -21,8 +21,8 @@ const seoCopy = {
         "SQ Group Malaysia connects you to SQ Life Consultancy for estate planning and SQ General PLT for general insurance support in Kuala Lumpur.",
     },
     zh: {
-      title: "SQ Group Malaysia | 资产传承与一般保险",
-      description: "SQ Group Malaysia 提供两个服务入口：SQ Life Consultancy 处理资产传承与遗产事务，SQ General PLT 协助一般保险安排。",
+      title: "SQ Group Malaysia | 资产规划、遗产管理与杂险保障",
+      description: "SQ Advisory Group 结合资产规划、遗产管理及杂险保障服务，协助个人、家庭及企业预先安排重要资产、责任与风险保障。",
     },
   },
   legacy: {
@@ -32,8 +32,8 @@ const seoCopy = {
         "SQ Life Consultancy in Kuala Lumpur helps families and businesses with estate planning, will and trust planning, estate administration, and asset unfreezing.",
     },
     zh: {
-      title: "SQ Life Consultancy | 资产传承与遗产处理",
-      description: "SQ Life Consultancy 协助个人、家庭及企业梳理资产传承、遗嘱信托规划、遗产处理与资产解冻流程。",
+      title: "SQ Life Consultancy | 资产传承与遗产管理",
+      description: "SQ Life Consultancy 协助个人、家庭及企业整理传承意愿、资产资料及相关文件流程，让遗嘱、信托、业务保障及遗产管理安排更清晰。",
     },
   },
   gi: {
@@ -43,8 +43,8 @@ const seoCopy = {
         "SQ General PLT in Kuala Lumpur helps individuals, families, and businesses arrange motor, home, travel, personal accident, business, and engineering insurance.",
     },
     zh: {
-      title: "SQ General PLT | 一般保险安排",
-      description: "SQ General PLT 协助个人、家庭及企业安排汽车、房屋、旅游、个人意外、商业与工程保险。",
+      title: "SQ General PLT | 综合杂险保障",
+      description: "SQ General PLT 协助个人、家庭及企业了解实际风险、比较保障范围，并安排合适的车险、产业、商业、责任、个人意外及旅游保障。",
     },
   },
 };
