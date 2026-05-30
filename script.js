@@ -117,6 +117,9 @@ function setLanguage(language) {
   translatable.forEach((element) => {
     element.textContent = element.dataset[language];
   });
+  document.querySelectorAll("[data-placeholder-zh][data-placeholder-en]").forEach((element) => {
+    element.setAttribute("placeholder", element.dataset[`placeholder${language === "zh" ? "Zh" : "En"}`]);
+  });
   if (languageToggle) {
     languageToggle.textContent = language === "zh" ? "EN" : "中文";
   }
@@ -175,11 +178,12 @@ if (form) {
     const name = formData.get("name");
     const phone = formData.get("phone");
     const service = formData.get("service");
+    const question = formData.get("question");
     const brand = document.querySelector(".brand-tab.active span")?.textContent || "SQ";
     const message =
       activeLanguage === "zh"
-        ? `你好，我想咨询 ${brand}。\n姓名：${name}\n电话：${phone}\n服务类型：${service}`
-        : `Hello, I would like to enquire with ${brand}.\nName: ${name}\nPhone: ${phone}\nService type: ${service}`;
+        ? `你好，我想咨询 ${brand}。\n姓名：${name}\n电话：${phone}\n服务类型：${service}${question ? `\n问题：${question}` : ""}`
+        : `Hello, I would like to enquire with ${brand}.\nName: ${name}\nPhone: ${phone}\nService type: ${service}${question ? `\nQuestion: ${question}` : ""}`;
     window.open(`https://wa.me/60102761236?text=${encodeURIComponent(message)}`, "_blank", "noreferrer");
   });
 }
@@ -204,10 +208,25 @@ const revealObserver = new IntersectionObserver(
   { threshold: 0.16 }
 );
 
-revealItems.forEach((item) => {
+revealItems.forEach((item, index) => {
+  item.style.setProperty("--reveal-index", String(Math.min(index % 6, 5)));
   if (item.getBoundingClientRect().top < window.innerHeight * 0.94) {
     item.classList.add("is-visible");
     return;
   }
   revealObserver.observe(item);
 });
+
+function revealHashTarget() {
+  if (!window.location.hash) return;
+  const target = document.querySelector(window.location.hash);
+  if (!target) return;
+  target.classList.add("is-visible");
+  target.querySelectorAll(".reveal").forEach((item) => {
+    item.classList.add("is-visible");
+    revealObserver.unobserve(item);
+  });
+}
+
+revealHashTarget();
+window.addEventListener("hashchange", revealHashTarget);
