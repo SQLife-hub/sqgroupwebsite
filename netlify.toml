@@ -87,6 +87,16 @@
   status = 200
 
 [[redirects]]
+  from = "/zh/index"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/zh/index.html"
+  to = "/zh"
+  status = 301
+
+[[redirects]]
   from = "/zh/legacy"
   to = "/sq-life.html"
   status = 200
