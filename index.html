@@ -26,7 +26,7 @@
     <meta property="og:image" content="https://www.sqgroup.com.my/assets/sq-logo-official.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="preload" as="image" href="assets/hero-group-malaysia.jpg" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=20260606-header3" />
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
@@ -78,8 +78,18 @@
       <div class="gateway-actions" aria-label="SQ contact actions">
         <button class="language-switch" type="button" data-lang-toggle>中文</button>
         <a class="header-whatsapp" href="https://wa.me/60102761236" target="_blank" rel="noreferrer">+60 10-276 1236</a>
-        <a class="header-contact" href="mailto:general@sqgroup.com.my" data-zh="联系" data-en="Contact">Contact</a>
+        <div class="header-contact-menu">
+          <button class="header-contact" type="button" data-zh="联系" data-en="Contact" aria-haspopup="true" aria-expanded="false">Contact</button>
+          <div class="header-contact-dropdown" role="menu">
+            <a href="tel:+60102761236" role="menuitem" data-zh="致电我们" data-en="Call Us">Call Us</a>
+            <a href="mailto:general@sqgroup.com.my" role="menuitem" data-zh="电邮我们" data-en="Email Us">Email Us</a>
+          </div>
+        </div>
       </div>
+      <nav class="page-branch-nav gateway-branch-nav" aria-label="SQ service branches">
+        <a class="brand-tab" href="/legacy"><span>SQ Life Consultancy</span></a>
+        <a class="brand-tab" href="/gi"><span>SQ General PLT</span></a>
+      </nav>
     </header>
 
     <main class="gateway">
@@ -174,6 +184,6 @@
       <a href="https://wa.me/60102761236" target="_blank" rel="noreferrer">WhatsApp</a>
     </nav>
 
-    <script src="script.js"></script>
+    <script src="script.js?v=20260606-header3"></script>
   </body>
 </html>

@@ -49,6 +49,95 @@ const seoCopy = {
   },
 };
 
+function enhanceContactDropdowns() {
+  document.querySelectorAll("a.header-contact").forEach((link) => {
+    if (link.closest(".header-contact-menu")) return;
+    const wrapper = document.createElement("div");
+    const button = document.createElement("button");
+    const menu = document.createElement("div");
+    const callLink = document.createElement("a");
+    const emailLink = document.createElement("a");
+
+    wrapper.className = "header-contact-menu";
+    button.className = "header-contact";
+    button.type = "button";
+    button.dataset.zh = link.dataset.zh || "联系";
+    button.dataset.en = link.dataset.en || "Contact";
+    button.setAttribute("aria-haspopup", "true");
+    button.setAttribute("aria-expanded", "false");
+
+    menu.className = "header-contact-dropdown";
+    menu.setAttribute("role", "menu");
+
+    callLink.href = "tel:+60102761236";
+    callLink.dataset.zh = "致电我们";
+    callLink.dataset.en = "Call Us";
+    callLink.setAttribute("role", "menuitem");
+
+    emailLink.href = "mailto:general@sqgroup.com.my";
+    emailLink.dataset.zh = "电邮我们";
+    emailLink.dataset.en = "Email Us";
+    emailLink.setAttribute("role", "menuitem");
+
+    menu.append(callLink, emailLink);
+    wrapper.append(button, menu);
+    link.replaceWith(wrapper);
+
+    button.addEventListener("click", (event) => {
+      event.stopPropagation();
+      const isOpen = wrapper.classList.toggle("is-open");
+      button.setAttribute("aria-expanded", String(isOpen));
+      document.querySelectorAll(".header-contact-menu.is-open").forEach((otherMenu) => {
+        if (otherMenu !== wrapper) {
+          otherMenu.classList.remove("is-open");
+          otherMenu.querySelector(".header-contact")?.setAttribute("aria-expanded", "false");
+        }
+      });
+    });
+  });
+
+  document.querySelectorAll(".header-contact-menu .header-contact").forEach((button) => {
+    if (button.dataset.dropdownReady === "true") return;
+    button.dataset.dropdownReady = "true";
+    button.addEventListener("click", (event) => {
+      const wrapper = button.closest(".header-contact-menu");
+      if (!wrapper) return;
+      event.stopPropagation();
+      const isOpen = wrapper.classList.toggle("is-open");
+      button.setAttribute("aria-expanded", String(isOpen));
+      document.querySelectorAll(".header-contact-menu.is-open").forEach((otherMenu) => {
+        if (otherMenu !== wrapper) {
+          otherMenu.classList.remove("is-open");
+          otherMenu.querySelector(".header-contact")?.setAttribute("aria-expanded", "false");
+        }
+      });
+    });
+  });
+}
+
+function updateContactDropdownLabels(language) {
+  document.querySelectorAll(".header-contact-menu [data-zh][data-en]").forEach((element) => {
+    element.textContent = element.dataset[language];
+  });
+}
+
+enhanceContactDropdowns();
+
+document.addEventListener("click", () => {
+  document.querySelectorAll(".header-contact-menu.is-open").forEach((menu) => {
+    menu.classList.remove("is-open");
+    menu.querySelector(".header-contact")?.setAttribute("aria-expanded", "false");
+  });
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key !== "Escape") return;
+  document.querySelectorAll(".header-contact-menu.is-open").forEach((menu) => {
+    menu.classList.remove("is-open");
+    menu.querySelector(".header-contact")?.setAttribute("aria-expanded", "false");
+  });
+});
+
 function routeForLanguage(language) {
   let path = cleanPath.replace(/\.html$/, "");
   if (path.endsWith("/sq-life")) path = "/legacy";
@@ -123,6 +212,7 @@ function setLanguage(language) {
   if (languageToggle) {
     languageToggle.textContent = language === "zh" ? "EN" : "中文";
   }
+  updateContactDropdownLabels(language);
   updateSeoLanguage(language);
   updateLocalizedLinks(language);
 }
